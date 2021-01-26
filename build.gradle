@@ -1,0 +1,62 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	jcenter()
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir('src/main/java')
+		}
+		resources {
+			srcDir('src/main/resources')
+		}
+	}
+	test {
+		java {
+			srcDir('src/main/java')
+		}
+		resources {
+			srcDir('src/main/resources')
+		}
+	}
+}
+
+test {
+	useJUnitPlatform()
+	testLogging {
+		events 'started', 'passed', 'skipped', 'failed'
+		exceptionFormat 'full'
+	}
+}
+
+dependencies {
+	testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.7.0'
+	testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.7.7'
+
+	testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.7.0'
+}
+
+eclipse {
+	project {
+		name = 'curso-design-patterns'
+		comment = 'Curso de Design Patterns da Alura'
+	}
+
+	sourceCompatibility = 11
+	targetCompatibility = 11
+
+	jdt {
+		sourceCompatibility = 11
+		targetCompatibility = 11
+	}
+
+	classpath {
+		downloadSources = false
+		downloadJavadoc = true
+	}
+}
