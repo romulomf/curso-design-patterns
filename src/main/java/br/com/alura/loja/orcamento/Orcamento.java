@@ -44,6 +44,10 @@ public class Orcamento {
 		estado.finalizar(this);
 	}
 
+	public boolean isFinalizado() {
+		return estado instanceof Finalizado;
+	}
+
 	void troca(Estado estado) {
 		this.estado = estado;
 	}

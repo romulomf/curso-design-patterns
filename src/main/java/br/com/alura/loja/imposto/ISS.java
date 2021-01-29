@@ -2,15 +2,16 @@ package br.com.alura.loja.imposto;
 
 import java.math.BigDecimal;
 
-import br.com.alura.loja.orcamento.Orcamento;
+public class ISS extends Imposto {
 
-public class ISS implements Imposto {
+	private final BigDecimal aliquota;
 
 	public ISS() {
-		// construtor padrão
+		super();
+		aliquota = new BigDecimal("0.06");
 	}
 
-	public BigDecimal calcular(Orcamento orcamento) {
-		return orcamento.getValor().multiply(new BigDecimal("0.06"));
+	public BigDecimal aliquota() {
+		return aliquota;
 	}
 }

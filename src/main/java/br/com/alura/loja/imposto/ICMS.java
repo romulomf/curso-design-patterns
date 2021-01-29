@@ -2,16 +2,17 @@ package br.com.alura.loja.imposto;
 
 import java.math.BigDecimal;
 
-import br.com.alura.loja.orcamento.Orcamento;
+public class ICMS extends Imposto {
 
-public class ICMS implements Imposto {
+	private final BigDecimal aliquota;
 
 	public ICMS() {
-		// construtor padrão
+		super();
+		aliquota = new BigDecimal("0.1");
 	}
 
 	@Override
-	public BigDecimal calcular(Orcamento orcamento) {
-		return orcamento.getValor().multiply(new BigDecimal("0.1"));
+	public BigDecimal aliquota() {
+		return aliquota;
 	}
 }
