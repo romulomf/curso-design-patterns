@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface Estado {
 
-	BigDecimal aplicaDescontoExtra(Orcamento orcamento);
+	BigDecimal obterDescontoExtra(Orcamento orcamento);
 
 	void aprovar(Orcamento orcamento);
 

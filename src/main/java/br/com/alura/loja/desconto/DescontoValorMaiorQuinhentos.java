@@ -16,7 +16,7 @@ public class DescontoValorMaiorQuinhentos extends Desconto {
 	}
 
 	@Override
-	protected BigDecimal aplicarDesconto(Orcamento orcamento) {
+	protected BigDecimal obterValorDesconto(Orcamento orcamento) {
 		return orcamento.getValor().multiply(new BigDecimal("0.05"));
 	}
 }

@@ -23,7 +23,7 @@ class PedidoTest {
 	@Test
 	@DisplayName("Testa a geração de um pedido")
 	void testaGeracaoPedido() {
-		DadosPedido dados = new DadosPedido("Rômulo", new BigDecimal(50), 2);
+		DadosPedido dados = new DadosPedido("Rômulo", new BigDecimal(50));
 		ComandoGerarPedido comando = new ComandoGerarPedido(new RegistrarGeracaoPedido());
 		Assertions.assertDoesNotThrow(() -> {			
 			comando.executar(dados);

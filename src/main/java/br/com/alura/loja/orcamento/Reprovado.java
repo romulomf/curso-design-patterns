@@ -9,7 +9,7 @@ public class Reprovado implements Estado {
 	}
 
 	@Override
-	public BigDecimal aplicaDescontoExtra(Orcamento orcamento) {
+	public BigDecimal obterDescontoExtra(Orcamento orcamento) {
 		throw new UnsupportedOperationException("O orçamento reprovado não pode ter desconto");
 	}
 

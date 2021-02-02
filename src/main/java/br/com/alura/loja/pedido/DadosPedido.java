@@ -8,13 +8,10 @@ public class DadosPedido {
 
 	private BigDecimal valor;
 
-	private int quantidadeItens;
-
-	public DadosPedido(String cliente, BigDecimal valor, int quantidadeItens) {
+	public DadosPedido(String cliente, BigDecimal valor) {
 		super();
 		this.cliente = cliente;
 		this.valor = valor;
-		this.quantidadeItens = quantidadeItens;
 	}
 
 	public String getCliente() {
@@ -31,13 +28,5 @@ public class DadosPedido {
 
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
-	}
-
-	public int getQuantidadeItens() {
-		return quantidadeItens;
-	}
-
-	public void setQuantidadeItens(int quantidadeItens) {
-		this.quantidadeItens = quantidadeItens;
 	}
 }

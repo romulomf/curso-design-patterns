@@ -9,7 +9,7 @@ public class Finalizado implements Estado {
 	}
 
 	@Override
-	public BigDecimal aplicaDescontoExtra(Orcamento orcamento) {
+	public BigDecimal obterDescontoExtra(Orcamento orcamento) {
 		throw new UnsupportedOperationException("O orçamento finalizado não pode ter desconto");
 	}
 

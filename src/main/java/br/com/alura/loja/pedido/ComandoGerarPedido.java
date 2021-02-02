@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import br.com.alura.loja.orcamento.Item;
 import br.com.alura.loja.orcamento.Orcamento;
 
 public class ComandoGerarPedido {
@@ -21,7 +22,7 @@ public class ComandoGerarPedido {
 	}
 
 	public void executar(DadosPedido dados) {
-		Orcamento orcamento = new Orcamento(dados.getValor(), dados.getQuantidadeItens());
+		Orcamento orcamento = new Orcamento(new Item(dados.getValor()));
 		Pedido pedido = new Pedido(dados.getCliente(), LocalDateTime.now(), orcamento);
 
 		acoes.forEach(a -> a.executar(pedido));

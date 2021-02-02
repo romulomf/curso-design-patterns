@@ -16,7 +16,7 @@ public class SemDesconto extends Desconto {
 	}
 
 	@Override
-	protected BigDecimal aplicarDesconto(Orcamento orcamento) {
+	protected BigDecimal obterValorDesconto(Orcamento orcamento) {
 		return BigDecimal.ZERO;
 	}
 }

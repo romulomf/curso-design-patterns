@@ -1,35 +1,38 @@
 package br.com.alura.loja.orcamento;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
+import java.util.List;
 
 public class Orcamento {
 
-	private BigDecimal valor;
-
-	private int quantidadeItens;
+	private List<Item> itens;
 
 	private Estado estado;
 
-	public Orcamento(BigDecimal valor, int quantidadeItens) {
-		this.valor = valor;
-		this.quantidadeItens = quantidadeItens;
+	public Orcamento(Item ...items) {
 		estado = new EmAnalise();
+		this.itens = Arrays.asList(items);
 	}
 
 	public BigDecimal getValor() {
+		BigDecimal valor = BigDecimal.ZERO;
+		for (Item item : itens) {
+			valor = valor.add(item.getValor());
+		}
 		return valor;
 	}
 
 	public int getQuantidadeItens() {
-		return quantidadeItens;
+		return itens.size();
 	}
 
 	public Estado getEstado() {
 		return estado;
 	}
 
-	public BigDecimal aplicaDescontoExtra() {
-		return estado.aplicaDescontoExtra(this);
+	public BigDecimal obterDescontoExtra() {
+		return estado.obterDescontoExtra(this);
 	}
 
 	public void aprovar() {

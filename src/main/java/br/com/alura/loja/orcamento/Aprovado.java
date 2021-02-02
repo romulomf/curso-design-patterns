@@ -11,7 +11,7 @@ public class Aprovado implements Estado {
 	}
 
 	@Override
-	public BigDecimal aplicaDescontoExtra(Orcamento orcamento) {
+	public BigDecimal obterDescontoExtra(Orcamento orcamento) {
 		if (!oDescontoJaFoiAplicado) {
 			oDescontoJaFoiAplicado = true;
 			return orcamento.getValor().multiply(new BigDecimal("0.02"));
