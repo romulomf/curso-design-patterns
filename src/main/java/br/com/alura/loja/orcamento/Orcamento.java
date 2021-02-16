@@ -4,9 +4,9 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
-public class Orcamento {
+public class Orcamento implements Orcavel {
 
-	private List<Item> itens;
+	private List<Orcavel> itens;
 
 	private Estado estado;
 
@@ -15,12 +15,17 @@ public class Orcamento {
 		this.itens = Arrays.asList(items);
 	}
 
+	@Override
 	public BigDecimal getValor() {
 		BigDecimal valor = BigDecimal.ZERO;
-		for (Item item : itens) {
+		for (Orcavel item : itens) {
 			valor = valor.add(item.getValor());
 		}
 		return valor;
+	}
+
+	public void adicionar(Orcavel orcavel) {
+		itens.add(orcavel);
 	}
 
 	public int getQuantidadeItens() {
