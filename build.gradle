@@ -26,6 +26,9 @@ sourceSets {
 }
 
 java {
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
+
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
@@ -35,7 +38,7 @@ test {
 	useJUnitPlatform()
 	testLogging {
 		events 'started', 'passed', 'skipped', 'failed'
-		exceptionFormat 'full'
+		exceptionFormat = 'full'
 	}
 }
 
@@ -53,9 +56,6 @@ eclipse {
 		name = 'curso-design-patterns'
 		comment = 'Curso de Design Patterns da Alura'
 	}
-
-	sourceCompatibility = 21
-	targetCompatibility = 21
 
 	jdt {
 		sourceCompatibility = 21
